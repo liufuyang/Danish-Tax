@@ -1,0 +1,4 @@
+income_monthly = linspace(3000,100000,10);
+[ic, tax] = danish_tax(income_monthly)
+
+su
