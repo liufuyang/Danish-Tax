@@ -7,7 +7,7 @@ function [ic tax]= danish_tax(income_monthly,varargin)
 
 conf = struct(...,
     'beskaef_fradrag', 0 ,...
-    'lone_interest' , 0 ...
+    'loan_interest' , 0 ...
     );
 
 conf = getargs(conf, varargin); 
@@ -23,12 +23,12 @@ beskaef_fradrag = conf.beskaef_fradrag;
 Max_beskaef_fradrag = 13600;
 
 % interest deduction
-Max_lone_interest = 50000;
-lone_interest = conf.lone_interest*12;
-if lone_interest > Max_lone_interest
-    lone_interest = Max_lone_interest;
+Max_loan_interest = 50000;
+loan_interest = conf.loan_interest*12;
+if loan_interest > Max_loan_interest
+    loan_interest = Max_loan_interest;
 end
-Base_level = 42900 + lone_interest;
+Base_level = 42900 + loan_interest;
 Top_level = 389900;
 
 % calculation
